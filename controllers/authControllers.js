@@ -19,6 +19,14 @@ export const registerController = async (req, res) => {
             return res.send("phone required")
         }
 
+        const notAllowedChars = [" ", "*", "$", "@", "&", ")", "(", "+", "-"]
+
+        for (let i = 0; i < username.length; i++) {
+            if (notAllowedChars.includes(username[i])) {
+                return res.send("Invalid username");
+            }
+        }
+
         const existingUser = await userModel.findOne({ email })
 
         if (existingUser) {
