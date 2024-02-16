@@ -7,6 +7,8 @@ import dotenv from "dotenv"
 
 import authRoutes from "./routes/auth.js"
 import connectionRoutes from "./routes/connections.js"
+import videoRoutes from "./routes/video.js"
+import commentRoutes from "./routes/comments.js"
 
 dotenv.config();
 
@@ -33,6 +35,8 @@ app.use(morgan('dev'))
 // routes 
 app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/connections", connectionRoutes)
+app.use("/api/v1/video", videoRoutes)
+app.use("/api/v1/comments", commentRoutes)
 
 
 

@@ -7,7 +7,7 @@ const videoSchema = new mongoose.Schema(
             required: true,
         },
         description: {
-            type: [String],
+            type: String,
         },
 
         likes: {
@@ -22,9 +22,9 @@ const videoSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             required: true
         },
-        link : {
-            type : String,
-            required : true
+        link: {
+            type: String,
+            required: true
         }
     },
     { timestamps: true }
