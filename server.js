@@ -6,6 +6,7 @@ import morgan from "morgan";
 import dotenv from "dotenv"
 
 import authRoutes from "./routes/auth.js"
+import connectionRoutes from "./routes/connections.js"
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use(morgan('dev'))
 
 // routes 
 app.use("/api/v1/auth", authRoutes)
+app.use("/api/v1/connections", connectionRoutes)
 
 
 
